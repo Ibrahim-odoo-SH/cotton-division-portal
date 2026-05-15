@@ -70,10 +70,14 @@ export default function Home() {
         /* ── Cards ── */
         .cards {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 18px;
-          width: 100%; max-width: 800px;
+          width: 100%; max-width: 1100px;
           animation: fadeUp 0.7s 0.12s ease both;
+        }
+
+        @media (max-width: 860px) {
+          .cards { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 580px) {
@@ -141,6 +145,11 @@ export default function Home() {
         .icon-imagine {
           background: rgba(170,150,130,0.12);
           border: 1px solid rgba(170,150,130,0.28);
+        }
+
+        .icon-codify {
+          background: rgba(107,175,146,0.12);
+          border: 1px solid rgba(107,175,146,0.28);
         }
 
         /* ── Card body ── */
@@ -312,6 +321,35 @@ export default function Home() {
               <div className="soon-badge">Coming Soon</div>
             </div>
           </div>
+
+          {/* CODIFY — LIVE */}
+          <a className="card active" href="https://codify.cottondivision.com">
+            <div className="glow" />
+            <div className="corner" />
+            <div className="card-icon icon-codify">🛍</div>
+            <div>
+              <div className="card-tag">Shopify Publisher</div>
+              <div className="card-name">
+                <span className="accent">codi</span>fy
+              </div>
+              <p className="card-desc">
+                Upload product images and let AI generate Shopify-ready listings. Review, edit, and publish to multiple stores in one click.
+              </p>
+            </div>
+            <div className="pills">
+              <span className="pill">AI Drafts</span>
+              <span className="pill">Multi-Store</span>
+              <span className="pill">SEO Optimised</span>
+              <span className="pill">Bulk Images</span>
+            </div>
+            <div className="card-cta">
+              <div className="cta-label">
+                Open Codify
+                <div className="cta-arrow">→</div>
+              </div>
+              <div className="status-dot" title="Live" />
+            </div>
+          </a>
 
         </div>
 
