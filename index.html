@@ -140,12 +140,17 @@
     /* ── Cards ── */
     .cards {
       display: flex; gap: 14px;
-      width: 100%; max-width: 840px;
+      width: 100%; max-width: 1120px;
       animation: rise .9s .18s cubic-bezier(.16,1,.3,1) both;
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 860px) {
+      .cards { flex-wrap: wrap; }
+      .cards .card { flex: 1 1 calc(50% - 7px); min-width: 260px; }
+    }
+    @media (max-width: 560px) {
       .cards { flex-direction: column; }
+      .cards .card { flex: 1 1 100%; }
     }
 
     /* shared card shell */
@@ -390,6 +395,38 @@
         </div>
       </a>
 
+      <!-- CODIpo ── LIVE -->
+      <a class="card card-live" href="https://codipo.cottondivision.com" id="cpo">
+        <div class="spotlight" id="spot-cpo"></div>
+        <div class="card-inner">
+          <div class="card-top">
+            <span class="tag">Amazon Ops</span>
+          </div>
+          <div>
+            <div class="card-name"><span class="t">codi</span>po</div>
+          </div>
+          <p class="card-desc">
+            Amazon PO to production sheets — turn vendor central exports into visual factory-ready cards and blank garment pick-up lists.
+          </p>
+          <div class="pills">
+            <span class="pill">PO Import</span>
+            <span class="pill">Production PDF</span>
+            <span class="pill">Pick-up Lists</span>
+            <span class="pill">SKU Parsing</span>
+          </div>
+          <div class="card-foot">
+            <div class="enter">
+              Enter platform
+              <div class="enter-arrow">→</div>
+            </div>
+            <div class="live">
+              <div class="live-dot"></div>
+              Live
+            </div>
+          </div>
+        </div>
+      </a>
+
       <!-- Codimagine ── COMING SOON -->
       <div class="card card-soon">
         <div class="card-inner">
@@ -450,7 +487,7 @@
       requestAnimationFrame(loop)
     })()
 
-    document.querySelectorAll('a').forEach(el => {
+    document.querySelectorAll('a.card-live, a:not(.card)').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cur.style.width = '11px'; cur.style.height = '11px'
         curR.style.width = '46px'; curR.style.height = '46px'
@@ -463,14 +500,16 @@
       })
     })
 
-    // ── Spotlight tracking on CodiFlow card ──
-    const card = document.getElementById('cflow')
-    const spot = document.getElementById('spot')
-
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect()
-      spot.style.left = (e.clientX - r.left) + 'px'
-      spot.style.top  = (e.clientY - r.top)  + 'px'
+    // ── Spotlight tracking on live cards ──
+    ;[['cflow','spot'], ['cpo','spot-cpo']].forEach(([cardId, spotId]) => {
+      const card = document.getElementById(cardId)
+      const spot = document.getElementById(spotId)
+      if (!card || !spot) return
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect()
+        spot.style.left = (e.clientX - r.left) + 'px'
+        spot.style.top  = (e.clientY - r.top)  + 'px'
+      })
     })
   </script>
 </body>
