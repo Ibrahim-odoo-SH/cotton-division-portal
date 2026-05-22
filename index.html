@@ -427,6 +427,38 @@
         </div>
       </a>
 
+      <!-- Codify ── LIVE -->
+      <a class="card card-live" href="https://codify.cottondivision.com" id="cfy">
+        <div class="spotlight" id="spot-cfy"></div>
+        <div class="card-inner">
+          <div class="card-top">
+            <span class="tag">Shopify · AI</span>
+          </div>
+          <div>
+            <div class="card-name"><span class="t">codi</span>fy</div>
+          </div>
+          <p class="card-desc">
+            AI-powered Shopify publisher — upload product images, Claude drafts the full listing, then publish title, description, SEO &amp; variants directly to your store.
+          </p>
+          <div class="pills">
+            <span class="pill">AI Drafts</span>
+            <span class="pill">SEO Metadata</span>
+            <span class="pill">Shopify Publish</span>
+            <span class="pill">Variant Builder</span>
+          </div>
+          <div class="card-foot">
+            <div class="enter">
+              Enter platform
+              <div class="enter-arrow">→</div>
+            </div>
+            <div class="live">
+              <div class="live-dot"></div>
+              Live
+            </div>
+          </div>
+        </div>
+      </a>
+
       <!-- Codimagine ── COMING SOON -->
       <div class="card card-soon">
         <div class="card-inner">
@@ -501,7 +533,7 @@
     })
 
     // ── Spotlight tracking on live cards ──
-    ;[['cflow','spot'], ['cpo','spot-cpo']].forEach(([cardId, spotId]) => {
+    ;[['cflow','spot'], ['cpo','spot-cpo'], ['cfy','spot-cfy']].forEach(([cardId, spotId]) => {
       const card = document.getElementById(cardId)
       const spot = document.getElementById(spotId)
       if (!card || !spot) return
