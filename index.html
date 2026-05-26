@@ -459,12 +459,12 @@
         </div>
       </a>
 
-      <!-- Codimagine ── COMING SOON -->
-      <div class="card card-soon">
+      <!-- Codimagine ── LIVE -->
+      <a class="card card-live" href="https://outfit-render-engine.lovable.app/" id="cim">
+        <div class="spotlight" id="spot-cim"></div>
         <div class="card-inner">
           <div class="card-top">
             <span class="tag">AI Studio</span>
-            <span class="badge-soon">Coming soon</span>
           </div>
           <div>
             <div class="card-name">codi<span class="t">magine</span></div>
@@ -480,12 +480,16 @@
           </div>
           <div class="card-foot">
             <div class="enter">
-              Coming soon
-              <div class="enter-arrow">⋯</div>
+              Enter platform
+              <div class="enter-arrow">→</div>
+            </div>
+            <div class="live">
+              <div class="live-dot"></div>
+              Live
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
 
@@ -533,7 +537,7 @@
     })
 
     // ── Spotlight tracking on live cards ──
-    ;[['cflow','spot'], ['cpo','spot-cpo'], ['cfy','spot-cfy']].forEach(([cardId, spotId]) => {
+    ;[['cflow','spot'], ['cpo','spot-cpo'], ['cfy','spot-cfy'], ['cim','spot-cim']].forEach(([cardId, spotId]) => {
       const card = document.getElementById(cardId)
       const spot = document.getElementById(spotId)
       if (!card || !spot) return
