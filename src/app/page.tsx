@@ -298,8 +298,9 @@ export default function Home() {
             </div>
           </a>
 
-          {/* Codimagine — COMING SOON */}
-          <div className="card soon">
+          {/* Codimagine — LIVE */}
+          <a className="card active" href="https://outfit-render-engine.lovable.app/">
+            <div className="glow" />
             <div className="corner" />
             <div className="card-icon icon-imagine">✦</div>
             <div>
@@ -318,9 +319,13 @@ export default function Home() {
               <span className="pill">Bulk Export</span>
             </div>
             <div className="card-cta">
-              <div className="soon-badge">Coming Soon</div>
+              <div className="cta-label">
+                Open Codimagine
+                <div className="cta-arrow">→</div>
+              </div>
+              <div className="status-dot" title="Live" />
             </div>
-          </div>
+          </a>
 
           {/* CODIFY — LIVE */}
           <a className="card active" href="https://codify.cottondivision.com">
