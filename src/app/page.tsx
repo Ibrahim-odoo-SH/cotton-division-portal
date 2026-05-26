@@ -306,7 +306,7 @@ export default function Home() {
             <div>
               <div className="card-tag">AI Studio</div>
               <div className="card-name">
-                codi<span className="accent">magine</span>
+                <span className="accent">codi</span>magine
               </div>
               <p className="card-desc">
                 AI-powered fashion studio. Generate model try-ons and product mockups directly from your Shopify catalogue.
